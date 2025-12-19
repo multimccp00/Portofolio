@@ -2,19 +2,16 @@ import React from "react";
 
 const skills = [
   { skill: "React", level: 75 },
-  { skill: "Node.js", level: 45 },
+  { skill: "Node.js", level: 55 },
   { skill: "JavaScript", level: 90 },
   { skill: "HTML & CSS", level: 80 },
   { skill: "BootStrap", level: 80 },
-  { skill: "C", level: 60 },
-  { skill: "C++", level: 55 },
   { skill: "C#", level: 80 },
   { skill: "PHP", level: 70 },
-  { skill: "Java", level: 60 },
+  { skill: "Java", level: 50 },
   { skill: "Python", level: 65 },
   { skill: "Flask", level: 55 },
-  { skill: "Assembly", level: 15 },
-  { skill: "Linux", level: 30 },
+  { skill: "Linux", level: 15 },
 ];
 
 const tools = [
@@ -29,16 +26,9 @@ const tools = [
   { tool: "GNS3", level: 55, logo: "/images/logos/gns3.png" },
   { tool: "Wireshark", level: 30, logo: "/images/logos/wireshark.png" },
   { tool: "Lightroom", level: 95, logo: "/images/logos/Lightroom.png" },
-  { tool: "Eagle AutoDesk", level: 55, logo: "/images/logos/Autodesk_Eagle.png" },
-  { tool: "MatLab", level: 50, logo: "/images/logos/Matlab.png" },
-  { tool: "Webots", level: 60, logo: "/images/logos/webots.png" },
-  { tool: "Quartus Prime", level: 60, logo: "/images/logos/Quartus_prime.png" },
   { tool: "Photoshop", level: 75, logo: "/images/logos/Photoshop.png" },  
   { tool: "Premiere", level: 45, logo: "/images/logos/Premiere.png" },
   { tool: "Teams", level: 90, logo: "/images/logos/Teams.png" },    
-  { tool: "Discord", level: 100, logo: "/images/logos/discord.png" },
-  { tool: "Aseprite", level: 40, logo: "/images/logos/Aseprite.png" },
-  { tool: "Krita", level: 35, logo: "/images/logos/krita.png" },
 ];
 
 export default function Resume() {
