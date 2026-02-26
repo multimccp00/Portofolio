@@ -31,23 +31,24 @@ export default function Sidebar() {
           </code>
       </div>
 
-      {/* Separator Line */}
-      <hr className="sidebar-separator" />
-
-      {/* Social Links */}
-      <div className="social">
-        <a href="https://github.com/multimccp" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} /> 
-        </a>
-        <a href="https://www.linkedin.com/in/miguel-campos-358965b4/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} /> 
-        </a>
-        <a href="https://www.instagram.com/miguelcamposcarphotography/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faInstagram} /> 
-        </a>
-        <a href="https://www.facebook.com/miguelccp/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faFacebook} /> 
-        </a>
+      {/* Footer section (separator + social) pushed to bottom */}
+      <div className="sidebar-footer">
+        <hr className="sidebar-separator" />
+        {/* Social Links */}
+        <div className="social">
+          <a href="https://github.com/multimccp00" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} /> 
+          </a>
+          <a href="https://www.linkedin.com/in/miguel-campos-358965b4/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} /> 
+          </a>
+          <a href="https://www.instagram.com/miguelcamposcarphotography/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faInstagram} /> 
+          </a>
+          <a href="https://www.facebook.com/miguelccp/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faFacebook} /> 
+          </a>
+        </div>
       </div>
     </aside>
   );

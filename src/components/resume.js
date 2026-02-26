@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const skills = [
   { skill: "React", level: 75 },
@@ -23,8 +23,6 @@ const tools = [
   { tool: "Unity", level: 80, logo: "/images/logos/Unity.webp" },
   { tool: "Blender", level: 67, logo: "/images/logos/blender.webp" },
   { tool: "PHPMyAdmin", level: 65, logo: "/images/logos/PhpMyAdmin.png" },
-  { tool: "GNS3", level: 55, logo: "/images/logos/gns3.png" },
-  { tool: "Wireshark", level: 30, logo: "/images/logos/wireshark.png" },
   { tool: "Lightroom", level: 95, logo: "/images/logos/Lightroom.png" },
   { tool: "Photoshop", level: 75, logo: "/images/logos/Photoshop.png" },  
   { tool: "Premiere", level: 45, logo: "/images/logos/Premiere.png" },
@@ -32,6 +30,14 @@ const tools = [
 ];
 
 export default function Resume() {
+  const [animateSkills, setAnimateSkills] = useState(false);
+
+  useEffect(() => {
+    // trigger animation after component mounts
+    const timer = setTimeout(() => setAnimateSkills(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="resume">
       <h2>Resume</h2>
@@ -77,12 +83,12 @@ export default function Resume() {
         <h3>Skills</h3>
         <div className="skills">
           {skills.map(({ skill, level }) => (
-            <div className="skill-bar" key={skill}>
+            <div className="skill-bar fade-in" key={skill}>
               <label>{skill}</label>
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: `${level}%` }}
+                  style={{ width: animateSkills ? `${level}%` : "0%" }}
                 ></div>
               </div>
             </div>
@@ -94,7 +100,7 @@ export default function Resume() {
         <h3>Tools</h3>
         <div className="card-grid">
           {tools.map(({ tool, level, logo }) => (
-            <div className="card" key={tool}>
+            <div className="card fade-in" key={tool}>
               <div className="card-logo">
                 <img src={`${process.env.PUBLIC_URL}${logo}`} alt={tool} />
               </div>

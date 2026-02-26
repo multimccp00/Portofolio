@@ -2,9 +2,9 @@ import React from "react";
 
 const whatIDo = [
   {
-    title: "Web Design",
-    desc: "The most modern and high-quality design made at a high level.",
-    emoji: "🎨",
+    title: "Software Development",
+    desc: "Designing and building robust software solutions across platforms.",
+    emoji: "💾",
   },
   {
     title: "Web Development",
@@ -12,9 +12,9 @@ const whatIDo = [
     emoji: "💻",
   },
   {
-    title: "Mobile Apps",
-    desc: "Development of mobile applications for iOS and Android.",
-    emoji: "📱",
+    title: "Web Design",
+    desc: "The most modern and high-quality design made at a high level.",
+    emoji: "🎨",
   },
   {
     title: "Photography",
@@ -36,17 +36,17 @@ const testimonials = [
   },
   {
     name: "Filipe Miranda",
-    position: "Student in master's degree in electronic engineering at University of Aveiro",
+    position: "Junior QA Tester at Altice",
     testimonial: "Worked with Miguel in multiple projects, he's earnest, has good communication and always with great ideas. Definitely a great professional",
   },
   {
     name: "Bernardo Silva",
-    position: "Student in bachelor's degree in multimedia and communication technologies at University of Aveiro",
+    position: "Student in Masters degree in Media Arts at University of minho",
     testimonial: "Enthusiastic professional who prides himself of his work ethic. I've experienced first-handed his search for solutions and knowledge gain. He has a deep programming background with experience in lots of coding languages and platforms.",
   },
   {
     name: "Miguel Tavares",  
-    position: "Student in bachelor's degree in multimedia and communication technologies at University of Aveiro",
+    position: "Student in Masters degree in Digital Game Development at University of Aveiro",
     testimonial: "Miguel is a very dedicated worker who puts his heart and soul into creating the best possible project, with impeccable attention to detail. He is someone you can trust to see a job through from start to finish, never compromising on the quality and precision of the final product.",
   },
 ];
@@ -74,7 +74,7 @@ export default function About() {
       <h2 style={{ marginTop: "2rem" }}>Testimonials</h2>
       <div className="card-grid">
         {testimonials.map(({ name, position, testimonial }) => (
-          <div className="card" key={name}>
+          <div className="card fade-in" key={name}>
             <h3>{name}</h3>
             <p>{position}</p>
             <blockquote>{testimonial}</blockquote>

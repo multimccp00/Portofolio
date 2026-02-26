@@ -32,7 +32,9 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 280px 1fr;
-  min-height: 100vh;
+  /* fix layout to viewport height so only main column scrolls */
+  height: 100vh;            /* full viewport */
+  overflow: hidden;         /* prevent outer page scrolling */
 
   /* Wider margin around the whole page + bigger gap */
   padding: 40px;
@@ -51,6 +53,21 @@ body {
   align-items: center;
   gap: 1.5rem;
   box-shadow: 0 0 10px #00000050;
+  /* keep sidebar fixed within viewport and prevent it from growing taller than container */
+  position: sticky;
+  top: 40px;                   /* match container padding */
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;            /* allow sidebar to scroll if necessary */
+}
+
+/* push social section (and separator) to bottom */
+.sidebar-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+.sidebar-footer .social {
+  margin-top: 0; /* not needed but keep default */
 }
 
 .avatar {
@@ -58,6 +75,12 @@ body {
   height: 100px;
   border-radius: 12px;
   object-fit: cover;
+  animation: avatarPop 0.6s ease-out;
+}
+
+@keyframes avatarPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
 .name code {
@@ -143,6 +166,30 @@ body {
   box-shadow: 0 0 10px #00000050;
   display: flex;
   flex-direction: column;
+  /* allow internal scrolling when content overflows */
+  overflow-y: auto;
+  /* ensure it doesn't grow past the container and respects the 40px padding top/bottom */
+  max-height: calc(100vh - 80px);
+  /* keep some extra space at bottom so content isn’t flush against the edge */
+  padding-bottom: 3rem;
+}
+
+/* custom scrollbar matching site colors */
+.main-column::-webkit-scrollbar {
+  width: 8px;
+}
+.main-column::-webkit-scrollbar-track {
+  background: #1c1c1e;
+  border-radius: 4px;
+}
+.main-column::-webkit-scrollbar-thumb {
+  background: #7eb2dd;
+  border-radius: 4px;
+}
+/* Firefox scrollbar */
+.main-column {
+  scrollbar-width: thin;
+  scrollbar-color: #7eb2dd #1c1c1e;
 }
 
 /* -------------------------------------------------
@@ -164,6 +211,7 @@ body {
   cursor: pointer;
   position: relative;
   padding-bottom: 6px;
+  transition: color 0.2s ease, font-weight 0.2s ease; /* smooth text changes */
 }
 
 .nav-btn.active,
@@ -198,6 +246,28 @@ body {
 /* -------------------------------------------------
    TYPOGRAPHY INSIDE SECTIONS
 --------------------------------------------------*/
+/* simple fade/slide animation for cards */
+.fade-in {
+  animation: cardFade 0.6s ease-in both;
+}
+
+/* project-description link styling */
+.project-description a {
+  color: #7eb2dd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.project-description a:hover,
+.project-description a:focus {
+  color: #a2d4f2;
+  text-decoration: underline;
+}
+
+@keyframes cardFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 section h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -364,15 +434,18 @@ button:hover {
 /* Styling for the project grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 projects per line */
+  grid-template-columns: repeat(4, 1fr); /* 4 projects per line, original fixed layout */
+  column-gap: 0;            /* horizontal spacing handled by card margins */
+  row-gap: 2rem;            /* vertical space between rows */
   width: 100%; /* Ensure the grid takes full width */
   margin-top: 2rem; /* Adjust top margin for spacing */
 }
 
+/* fallback/legacy class, not currently used but keep minimal styling */
 .projects {
   display: flex;
   justify-content: space-between; /* Aligns the cards in a row */
-  gap: 0px; /* Removes space between cards */
+  gap: 1rem;
   flex-wrap: wrap; /* Allows the cards to wrap to the next line if needed */
 }
 
@@ -384,8 +457,8 @@ button:hover {
   padding: 20px;
   background-color: #1f1f1f;
   border-radius: 10px;
-  width: auto;
-  margin: 0 1rem; /* Removes the margin between the cards */
+  width: auto;            /* restore original sizing */
+  margin: 0 1rem;         /* horizontal spacing between cards */
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -429,6 +502,7 @@ button:hover {
 .project-card:hover {
   transform: translateY(-6px); /* Subtle hover effect */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 /* -------------------------------------------------
    PROJECT DETAIL VIEW
@@ -595,6 +669,34 @@ projects
 .project-details h3 {
   font-size: 1.5rem;
   color: #7eb2dd;
+}
+
+/* header area for details with close button */
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.details-header .close-btn {
+  background: #007bff; /* blue button */
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.details-header .close-btn:hover {
+  background: #0056d2;
+}
+.project-details {
+  position: relative;
 }
 
 .project-details p {
