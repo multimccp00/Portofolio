@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: "Carjockey",
       description: "Website to help those looking for a new car",
-      image: "/images/carjockey/layout mobile homepage.png",
+      image: "/images/carjockey/preview.png",
       details: `
         <div class="project-description">
         <h4>Carjockey - A Comprehensive Car Listing Platform</h4>
