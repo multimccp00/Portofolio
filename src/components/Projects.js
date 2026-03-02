@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: "Carjockey",
       description: "Website to help those looking for a new car",
-      image: "/images/carjockey/layout mobile homepage.png",
+      image: "/images/carjockey/preview.png",
       details: `
         <div class="project-description">
         <h4>Carjockey - A Comprehensive Car Listing Platform</h4>
@@ -75,9 +75,39 @@ const Projects = () => {
     {
       id: 4,
       title: "Eco Scan",
-      description: "(Details coming soon)",
+      description: "Sustainable shopping web application",
       image: "/images/projects/eco-scan.png",
-      details: `<div class="project-description"><h4>Eco Scan</h4><p>More information will be added shortly.</p></div>`
+      details: `<div class="project-description">
+          <h4>🌱 EcoScan – Sustainable Shopping Web App</h4>
+          <p>
+            EcoScan is a full-featured web application designed to encourage sustainable shopping and responsible consumption. Built with <strong>PHP, JavaScript, and MySQL</strong>, it empowers users to manage shopping lists, track purchases, and earn badges for eco-friendly actions—all within a modern, mobile-friendly interface.
+          </p>
+          <h4>✨ Key Features</h4>
+          <ul>
+            <li>User registration, login, and profile management</li>
+            <li>Create and manage shopping lists with real-time updates</li>
+            <li>Scan products and track purchase history</li>
+            <li>Earn badges and view rankings based on sustainable actions</li>
+            <li>Interactive admin dashboard for managing products, stores, and users</li>
+            <li>Data visualization with charts for spending, savings, and sustainability metrics</li>
+            <li>Responsive design for seamless use on desktop and mobile</li>
+          </ul>
+          <h4>🛠️ Technical Highlights</h4>
+          <ul>
+            <li>PHP backend with modular scripts and secure database access (MySQLi)</li>
+            <li>JavaScript-powered dynamic UI and charting (Chart.js)</li>
+            <li>Organized MVC-inspired structure with reusable components</li>
+            <li>Clean, maintainable code with PHPDoc and inline documentation</li>
+            <li>Custom CSS and Bootstrap for a polished, accessible user experience</li>
+          </ul>
+          <h4>🎯 Why It Stands Out</h4>
+          <p>
+            EcoScan is more than a shopping tool—it’s a gamified platform that motivates users to make greener choices. The app demonstrates your ability to design and implement a real-world, database-driven web solution with a focus on usability, performance, and sustainability. Perfect for showcasing your skills in full-stack web development, user experience, and modern coding practices.
+          </p>
+          <p>
+            <a href="https://github.com/multimccp00/Eco-Scan" target="_blank" rel="noopener noreferrer">Source code on GitHub</a>
+          </p>
+        </div>`
     },
     {
       id: 5,
@@ -119,9 +149,43 @@ const Projects = () => {
     {
       id: 6,
       title: "Referee Accounting",
-      description: "(Details coming soon)",
+      description: "Referee earnings tracker desktop application",
       image: "/images/projects/referee-accounting.png",
-      details: `<div class="project-description"><h4>Referee Accounting</h4><p>More information will be added shortly.</p></div>`
+      details: `<div class="project-description">
+          <h4>🏐 Referee Earnings Tracker – Desktop Application</h4>
+          <p>
+            A lightweight Python/Tkinter utility that helps referees record and review their game payments. Data is saved locally in JSON files (with optional SQLite/MySQL/Postgres support) and organised by season, making it easy to keep track of earnings over time.
+          </p>
+          <h4>✨ Key Features</h4>
+          <ul>
+            <li>Add &amp; edit game entries with date, location, payments (transport, food, game), status, etc.</li>
+            <li>Season‑based organisation – switch between years, create new seasons on the fly.</li>
+            <li>Summaries &amp; stats display total earnings, outstanding amounts and game count.</li>
+            <li>Search, sort and filter within the table; click column headers for ascending/descending order.</li>
+            <li>Convenient date picker with calendar popup (tkcalendar or custom fallback).</li>
+            <li>CRUD operations with confirmation prompts; move games between seasons or delete them.</li>
+            <li>Backend flexibility – JSON files by default, with automatic import/migration if a database connection is provided.</li>
+            <li>Portable packaging support (PyInstaller) writes data beside the executable for easy distribution.</li>
+            <li>Database connection tester and graceful fall‑backs when the remote store is unavailable.</li>
+          </ul>
+          <h4>🛠️ Technical Highlights</h4>
+          <ul>
+            <li>Built purely with Python 3 and Tkinter/ttk for a native cross‑platform GUI.</li>
+            <li>DataManager module abstracts storage – handles JSON, SQLite, and remote DBs with deduplication and export.</li>
+            <li>Robust error handling and user feedback (warnings, info dialogs, backend status label).</li>
+            <li>Modular design: main.py drives UI; data_manager.py encapsulates persistence logic.</li>
+            <li>Uses environment variables or an optional private db_connection.py for secure credentials.</li>
+            <li>Clean, well‑documented code with type hints and comments; easy to extend or maintain.</li>
+            <li>Supports parcelled deployment, making it suitable for offline use by individual referees.</li>
+          </ul>
+          <h4>🎯 Why It Stands Out</h4>
+          <p>
+            This project demonstrates the ability to build a polished desktop tool from scratch, blending GUI design with flexible data storage. It showcases thoughtful UX (searchable/sortable tables, seasonal views, date pickers), resilient backend logic (automatic JSON‑to‑DB migration), and a focus on real‑world workflows. It’s an excellent portfolio piece for anyone highlighting Python desktop development, data management, and user‑centred design.
+          </p>
+          <p>
+            <a href="https://github.com/multimccp00/Accounting-Referee" target="_blank" rel="noopener noreferrer">Source code on GitHub</a>
+          </p>
+        </div>`
     },
   ];
 
