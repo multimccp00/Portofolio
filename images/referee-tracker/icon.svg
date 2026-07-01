@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Referee Tracker icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2d3d"/>
+      <stop offset="1" stop-color="#2a2a2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)"/>
+
+  <!-- handball -->
+  <g transform="translate(150 125)">
+    <circle r="58" fill="#e8523f"/>
+    <g stroke="#2a2a2c" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M-58 -12 Q -20 -34 20 -30 Q 48 -26 58 -4"/>
+      <path d="M-52 26 Q -14 46 24 38 Q 46 33 55 18"/>
+      <path d="M-8 -58 Q -18 -18 -4 20 Q 6 44 -2 58"/>
+      <path d="M30 -50 Q 22 -14 34 22 Q 40 40 30 54"/>
+    </g>
+  </g>
+
+  <!-- whistle -->
+  <g transform="translate(250 92) rotate(18)">
+    <rect x="-6" y="-14" width="70" height="30" rx="15" fill="#7eb2dd"/>
+    <circle cx="52" cy="1" r="17" fill="#7eb2dd"/>
+    <circle cx="52" cy="1" r="7" fill="#1f2d3d"/>
+    <path d="M-6 -6 q -22 -4 -30 10" stroke="#7eb2dd" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
