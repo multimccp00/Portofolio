@@ -1,28 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Referee Tracker icon">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1f2d3d"/>
-      <stop offset="1" stop-color="#2a2a2c"/>
-    </linearGradient>
-  </defs>
-  <rect width="400" height="250" fill="url(#bg)"/>
+  <g fill="none" stroke="#7eb2dd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- handball -->
-  <g transform="translate(150 125)">
-    <circle r="58" fill="#e8523f"/>
-    <g stroke="#2a2a2c" stroke-width="4" fill="none" stroke-linecap="round">
-      <path d="M-58 -12 Q -20 -34 20 -30 Q 48 -26 58 -4"/>
-      <path d="M-52 26 Q -14 46 24 38 Q 46 33 55 18"/>
-      <path d="M-8 -58 Q -18 -18 -4 20 Q 6 44 -2 58"/>
-      <path d="M30 -50 Q 22 -14 34 22 Q 40 40 30 54"/>
+    <!-- handball: small ball with characteristic curved seams -->
+    <g transform="translate(140 140)">
+      <circle r="46"/>
+      <!-- three curved seams meeting toward a point, the classic handball pattern -->
+      <path d="M0 -46 C -10 -18 -10 8 0 46"/>
+      <path d="M0 -46 C 18 -22 30 0 40 24"/>
+      <path d="M0 -46 C -18 -22 -30 0 -40 24"/>
+      <path d="M-40 24 C -14 14 14 14 40 24"/>
     </g>
-  </g>
 
-  <!-- whistle -->
-  <g transform="translate(250 92) rotate(18)">
-    <rect x="-6" y="-14" width="70" height="30" rx="15" fill="#7eb2dd"/>
-    <circle cx="52" cy="1" r="17" fill="#7eb2dd"/>
-    <circle cx="52" cy="1" r="7" fill="#1f2d3d"/>
-    <path d="M-6 -6 q -22 -4 -30 10" stroke="#7eb2dd" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- referee whistle -->
+    <g transform="translate(232 96) rotate(12)">
+      <!-- barrel -->
+      <path d="M0 -16 h44 a16 16 0 0 1 16 16 v0 a24 24 0 0 1 -24 24 h-36 a16 16 0 0 1 -16 -16 v-8 a16 16 0 0 1 16 -16 z"/>
+      <!-- pea hole on top -->
+      <circle cx="20" cy="-3" r="7"/>
+      <!-- mouthpiece -->
+      <path d="M-16 0 h-16"/>
+      <!-- lanyard loop -->
+      <path d="M58 -2 q 22 -6 30 14 q 6 18 -12 24"/>
+    </g>
+
   </g>
 </svg>
