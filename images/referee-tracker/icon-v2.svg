@@ -1,27 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Referee Tracker icon">
-  <g fill="none" stroke="#7eb2dd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-
-    <!-- handball: small ball with characteristic curved seams -->
-    <g transform="translate(140 140)">
-      <circle r="46"/>
-      <!-- three curved seams meeting toward a point, the classic handball pattern -->
-      <path d="M0 -46 C -10 -18 -10 8 0 46"/>
-      <path d="M0 -46 C 18 -22 30 0 40 24"/>
-      <path d="M0 -46 C -18 -22 -30 0 -40 24"/>
-      <path d="M-40 24 C -14 14 14 14 40 24"/>
-    </g>
-
-    <!-- referee whistle -->
-    <g transform="translate(232 96) rotate(12)">
-      <!-- barrel -->
-      <path d="M0 -16 h44 a16 16 0 0 1 16 16 v0 a24 24 0 0 1 -24 24 h-36 a16 16 0 0 1 -16 -16 v-8 a16 16 0 0 1 16 -16 z"/>
-      <!-- pea hole on top -->
-      <circle cx="20" cy="-3" r="7"/>
-      <!-- mouthpiece -->
-      <path d="M-16 0 h-16"/>
-      <!-- lanyard loop -->
-      <path d="M58 -2 q 22 -6 30 14 q 6 18 -12 24"/>
-    </g>
-
+  <!-- Authentic Lucide "volleyball" icon (MIT licensed), centered and scaled -->
+  <g transform="translate(150 65) scale(4.2)" fill="none" stroke="#7eb2dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 7a16 16 20 0 1 10.98 4.362"/>
+    <path d="M12 12a13 13 0 0 1-8.66 5"/>
+    <path d="M16.83 13.634a16 16 0 0 1-9.267 7.328"/>
+    <path d="M20.66 17A13 13 0 0 0 12 12a13 13 0 0 1 0-10"/>
+    <path d="M8.17 15.366a16 16 0 0 1-1.713-11.69"/>
+    <circle cx="12" cy="12" r="10"/>
   </g>
 </svg>
