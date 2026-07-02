@@ -151,6 +151,39 @@ const Projects = () => {
       `,
     },
     {
+      id: 4,
+      title: "Eco Scan",
+      description: "Sustainable shopping web application",
+      image: "/images/projects/eco-scan.png",
+      details: `<div class="project-description">
+          <h4>EcoScan – Sustainable Shopping Web App</h4>
+          <p>
+            EcoScan is a full-featured web application designed to encourage sustainable shopping and responsible consumption. Built with <strong>PHP, JavaScript, and MySQL</strong>, it empowers users to manage shopping lists, track purchases, and earn badges for eco-friendly actions—all within a modern, mobile-friendly interface.
+          </p>
+          <h4>Key Features</h4>
+          <ul>
+            <li>User registration, login, and profile management</li>
+            <li>Create and manage shopping lists with real-time updates</li>
+            <li>Scan products and track purchase history</li>
+            <li>Earn badges and view rankings based on sustainable actions</li>
+            <li>Interactive admin dashboard for managing products, stores, and users</li>
+            <li>Data visualization with charts for spending, savings, and sustainability metrics</li>
+            <li>Responsive design for seamless use on desktop and mobile</li>
+          </ul>
+          <h4>Technical Highlights</h4>
+          <ul>
+            <li>PHP backend with modular scripts and secure database access (MySQLi)</li>
+            <li>JavaScript-powered dynamic UI and charting (Chart.js)</li>
+            <li>Organized MVC-inspired structure with reusable components</li>
+            <li>Clean, maintainable code with PHPDoc and inline documentation</li>
+            <li>Custom CSS and Bootstrap for a polished, accessible user experience</li>
+          </ul>
+          <p>
+            <a href="https://github.com/multimccp00/Eco-Scan" target="_blank" rel="noopener noreferrer">Source code on GitHub</a>
+          </p>
+        </div>`
+    },
+    {
       id: 5,
       title: "DupFree",
       description: "Duplicate file finder utility built with .NET/WPF",
