@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 const skills = [
   { skill: "React", level: 75 },
   { skill: "Node.js", level: 55 },
-  { skill: "JavaScript", level: 90 },
-  { skill: "HTML & CSS", level: 80 },
+  { skill: "JavaScript", level: 95 },
+  { skill: "HTML & CSS", level: 90 },
   { skill: "BootStrap", level: 80 },
   { skill: "C#", level: 80 },
-  { skill: "PHP", level: 70 },
+  { skill: "PHP", level: 85 },
   { skill: "Java", level: 50 },
   { skill: "Python", level: 65 },
   { skill: "Flask", level: 55 },
@@ -26,7 +26,10 @@ const tools = [
   { tool: "Lightroom", level: 95, logo: "/images/logos/Lightroom.png" },
   { tool: "Photoshop", level: 75, logo: "/images/logos/Photoshop.png" },  
   { tool: "Premiere", level: 45, logo: "/images/logos/Premiere.png" },
-  { tool: "Teams", level: 90, logo: "/images/logos/Teams.png" },    
+  { tool: "Teams", level: 90, logo: "/images/logos/Teams.png" },
+  { tool: "Docker", level: 65, logo: "/images/logos/docker.svg" },
+  { tool: "WordPress", level: 80, logo: "/images/logos/wordpress.svg" },
+  { tool: "HubSpot", level: 70, logo: "/images/logos/hubspot.svg" },
 ];
 
 export default function Resume() {
@@ -73,6 +76,7 @@ export default function Resume() {
       <section>
         <h3>Experience</h3>
         <ul>
+          <li><strong>Junior Web Developer at Kaizen Institute</strong> - <em>2025</em> - Hired to design and build the company's new corporate website using WordPress, PHP and Docker, delivering it to production. Also oversaw the company's AI initiatives (primarily Claude-based) and single-handedly built an internal AI web app featuring assistants for translation, document handling, company-knowledge search, and marketing support.</li>
           <li> <strong>Part-Time Worker at Worten </strong> - <em> Aveiro, 2022 </em> - Worked part-time at Worten, gaining valuable customer service experience, managing inventory, and assisting in the sales process.</li>
           <li><strong>Handball Referee</strong> - Certified handball referee with experience at various levels.</li>
           <li><strong>Karate</strong> - Volunteered in a non-licensed capacity, acting as a senior student (senpai) to assist in classes teaching other students</li>          

@@ -22,9 +22,14 @@ const whatIDo = [
     emoji: "📷",
   },
   {
+    title: "AI & Prompt Engineering",
+    desc: "Building AI-assisted tools and assistants — translation, document, and knowledge helpers — primarily with Claude.",
+    emoji: "🤖",
+  },
+  {
     title: "Handball Refereeing",
     desc: "Certified handball referee with experience officiating matches at various levels.",
-    emoji: "🏐",
+    emoji: "🤾",
   },
 ];
 
@@ -56,7 +61,7 @@ export default function About() {
     <section>
       <h2>About Me</h2>
       <p>
-        I'm a Multimedia and Communication Technologies graduate from the University of Aveiro, Portugal, with a strong interest in web development. More than just building functional websites, I’m driven by the challenge of creating digital experiences that truly stand out — through design, interactivity, and the unique ways they express ideas.
+        I'm a Multimedia and Communication Technologies graduate from the University of Aveiro, Portugal, working in web development. I recently built and shipped a company's new website at Kaizen Institute — using WordPress, PHP and Docker — where I also led the company's AI initiatives and single-handedly built an internal AI assistant web app. More than just building functional websites, I’m driven by the challenge of creating digital experiences that truly stand out — through design, interactivity, and the unique ways they express ideas.
       </p>
       <p>I believe the best way to learn is by doing. I work with complete focus: I don’t leave things unfinished, I like solving problems on my own, and I see every project as a real opportunity to grow. What drives me is innovation — creating technological solutions that are useful, expressive, and meaningful.</p>
       <p>My personal mantra: <b>"Build with purpose. Play with heart. Code for impact."</b></p>

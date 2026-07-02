@@ -210,37 +210,56 @@ body {
   color: #aaa;
   cursor: pointer;
   position: relative;
-  padding-bottom: 6px;
-  transition: color 0.2s ease, font-weight 0.2s ease; /* smooth text changes */
+  padding: 6px 16px;
+  margin-bottom: 0;
+  border-radius: 999px;           /* pill shape */
+  box-shadow: none;
+  transform: none;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.nav-btn.active,
+/* hover shows a soft pill highlight around the tab */
 .nav-btn:hover {
   color: #fff;
-  font-weight: 600;
+  background-color: rgba(126, 178, 221, 0.15);
+  transform: none;
+  box-shadow: none;
 }
 
-.nav-btn.active::after,
-.nav-btn:hover::after {
+/* active tab: brighter text (no pill — it gets the underline below) */
+.nav-btn.active {
+  color: #fff;
+}
+
+/* underline on the ACTIVE tab only; wipes in from the left */
+.nav-btn::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 16px;
+  right: 16px;
+  bottom: -2px;
   height: 2px;
-  width: 100%;
-  background-color: #7eb2dd;   /* yellow accent */
+  background-color: #7eb2dd;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-btn.active::after {
+  transform: scaleX(1);
 }
 
 /* -------------------------------------------------
    SECTION CONTAINER (animated wrapper)
 --------------------------------------------------*/
 .section-container {
-  animation: fadeIn 0.4s ease-in-out;
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);   }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 /* -------------------------------------------------
@@ -248,7 +267,7 @@ body {
 --------------------------------------------------*/
 /* simple fade/slide animation for cards */
 .fade-in {
-  animation: cardFade 0.6s ease-in both;
+  animation: cardFade 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* project-description link styling */
@@ -256,7 +275,7 @@ body {
   color: #7eb2dd;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-description a:hover,
 .project-description a:focus {
@@ -265,7 +284,7 @@ body {
 }
 
 @keyframes cardFade {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 section h2 {
@@ -292,12 +311,18 @@ section p {
   background-color: #2a2a2c;
   padding: 1rem;
   border-radius: 24px;
-  box-shadow: 0 0 10px #00000030;
-  transition: transform 0.2s;
+  box-shadow: 0 4px 14px #00000030;
+  border: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+  will-change: transform;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(126, 178, 221, 0.35);
 }
 
 .card h3 {
@@ -340,7 +365,7 @@ section p {
   height: 100%;
   background-color: #7eb2dd;
   border-radius: 5px;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* -------------------------------------------------
@@ -385,11 +410,11 @@ section p {
   width: 100%;
   height: 100%; /* Stretch images to fill the container */
   object-fit: cover; /* Ensure images fill the container */
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.05); /* Zoom-in effect on hover */
+  transform: scale(1.08); /* Zoom-in effect on hover */
 }
 
 .lightbox {
@@ -412,6 +437,21 @@ section p {
 
 .lightbox.active {
   display: flex;
+  animation: lightboxFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox.active img {
+  animation: lightboxZoom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lightboxFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes lightboxZoom {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1);    }
 }
 
 button {
@@ -422,10 +462,20 @@ button {
   cursor: pointer;
   border-radius: 8px;
   margin-bottom: 25px;
+  transition: background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 button:hover {
   background-color: #5a8eb2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(126, 178, 221, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* -------------------------------------------------
@@ -481,6 +531,12 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures image fills container without distortion */
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* subtle zoom on the card image when hovering the card */
+.project-card:hover .image-container img {
+  transform: scale(1.06);
 }
 
 .project-card h3 {
@@ -500,9 +556,9 @@ button:hover {
 
 /* Hover effect for the project card */
 .project-card:hover {
-  transform: translateY(-6px); /* Subtle hover effect */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: translateY(-8px); /* Subtle hover effect */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
+  border-color: rgba(126, 178, 221, 0.4);
 }
 /* -------------------------------------------------
    PROJECT DETAIL VIEW
@@ -542,16 +598,26 @@ button:hover {
 /* Style for images at the bottom */
 .project-description .project-images {
   display: flex;
-  gap: 20px; /* Space between images */
+  flex-wrap: wrap;          /* wrap instead of overflowing off-screen */
+  gap: 20px;                /* Space between images */
+  width: 100%;
 }
 
 .project-description .project-images img {
-  max-width: 65rem; /* Ensure uniform image size */
+  flex: 1 1 300px;          /* responsive: shrink/grow, min ~300px */
+  min-width: 0;             /* allow shrinking below content size */
+  max-width: 100%;
   height: auto;
-  max-height: 45rem;
-  object-fit: cover; /* Keep aspect ratio while filling the box */
+  object-fit: cover;
   border-radius: 8px;
-  cursor: pointer; /* Make images clickable */
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-description .project-images img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -627,10 +693,15 @@ projects
   background-color: #2a2a2c;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+  will-change: transform;
 }
 
 .project-card img {
@@ -664,11 +735,28 @@ projects
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-top: 1rem;
   color: #fbf5ee;
+  animation: detailOpen 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes detailOpen {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* stagger the inner content so it reveals just after the panel */
+.project-details .details-content {
+  animation: fadeIn 0.5s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .project-details h3 {
   font-size: 1.5rem;
   color: #7eb2dd;
+}
+
+/* keep detail text from running off the right edge */
+.details-content {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* header area for details with close button */
@@ -690,13 +778,32 @@ projects
   align-items: center;
   gap: 0.25rem;
   border-radius: 6px;
-  transition: background 0.2s;
+  transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .details-header .close-btn:hover {
   background: #0056d2;
+  transform: translateY(-1px);
+}
+.details-header .close-btn:active {
+  transform: translateY(0);
 }
 .project-details {
   position: relative;
+}
+
+/* -------------------------------------------------
+   ACCESSIBILITY: respect reduced-motion preference
+--------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .project-details p {
@@ -718,12 +825,18 @@ projects
   background-color: #2a2a2c;
   padding: 1rem;
   border-radius: 24px;
-  box-shadow: 0 0 10px #00000030;
-  transition: transform 0.2s;
+  box-shadow: 0 4px 14px #00000030;
+  border: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+  will-change: transform;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(126, 178, 221, 0.35);
 }
 
 .card h3 {
@@ -744,7 +857,7 @@ projects
   height: 100%;
   background-color: #7eb2dd;
   border-radius: 5px;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-logo {
@@ -760,6 +873,11 @@ projects
   width: 80px;  /* Adjust the size of the logo */
   height: 80px;
   object-fit: contain;  /* Ensures the logo fits within the allocated space */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .card-logo img {
+  transform: scale(1.12) rotate(-3deg);
 }
 
 /* -------------------------------------------------
