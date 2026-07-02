@@ -154,7 +154,7 @@ const Projects = () => {
       id: 4,
       title: "Eco Scan",
       description: "Sustainable shopping web application",
-      image: "/images/projects/eco-scan.png",
+      image: "/images/projects/eco-scan.svg",
       details: `<div class="project-description">
           <h4>EcoScan – Sustainable Shopping Web App</h4>
           <p>
