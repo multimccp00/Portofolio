@@ -128,23 +128,32 @@ body {
   box-shadow: none;
 }
 
-/* Tech stack chips */
+/* Skills / tech stack — matches the "const contacts()" code style */
 .stack {
   width: 100%;
 }
 
-.stack-label code {
+.stack code {
   font-family: 'Courier New', Courier, monospace;
-  color: #6b7280;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-  display: block;
+  color: #eff5fb;
+  font-size: 1rem;
+}
+
+.stack .const {
+  font-family: 'Courier New', Courier, monospace;
+  color: #0C7797;
+}
+
+.stack .contact {
+  font-family: 'Courier New', Courier, monospace;
+  color: #db3a34;
 }
 
 .stack-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin: 8px 0 8px 0.7rem;
 }
 
 .stack-chip {
