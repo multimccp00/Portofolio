@@ -176,29 +176,6 @@ a.identity-class .str:hover,
   color: #d19a66;          /* boolean value */
 }
 
-.stack-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 8px 0 8px 1.2rem;
-}
-
-.stack-chip {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.75rem;
-  color: #cbd5e1;
-  background-color: #2a2a2c;
-  border: 1px solid #3a3a3d;
-  padding: 3px 9px;
-  border-radius: 999px;
-  transition: border-color 0.25s ease, color 0.25s ease;
-}
-
-.stack-chip:hover {
-  color: #fff;
-  border-color: rgba(126, 178, 221, 0.5);
-}
-
 /* push social section (and separator) to bottom */
 .sidebar-footer {
   margin-top: auto;

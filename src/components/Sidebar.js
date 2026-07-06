@@ -38,14 +38,14 @@ export default function Sidebar() {
             <span className="prop">phone</span> = <a className="str" href="tel:+351919562259">"+351 919562259"</a>
           </div>
           <div className="prop-line">
-            <span className="prop">skills</span> = {'['}
-          </div>
-          <div className="stack-chips">
-            {["React", "Node.js", "JavaScript", "Python", "PHP", "C#", "MySQL", "Docker"].map((t) => (
-              <span className="stack-chip" key={t}>{t}</span>
+            <span className="prop">skills</span> = [
+            {["React", "Node.js", "JavaScript", "Python", "PHP", "C#", "MySQL", "Docker"].map((t, i, arr) => (
+              <span key={t}>
+                <span className="str">"{t}"</span>{i < arr.length - 1 ? ", " : ""}
+              </span>
             ))}
+            ]
           </div>
-          <div className="cls-line">{']'}</div>
           <div className="cls-line">{'}'}</div>
         </code>
       </div>

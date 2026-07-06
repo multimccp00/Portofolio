@@ -84,7 +84,7 @@ const Projects = () => {
       id: 2,
       title: "Diecast Car Collection App",
       description: "Full-stack web app for cataloging a personal die-cast car collection",
-      image: "/images/dieCast/Screenshot 2025-05-23 162627.png",
+      image: "/images/dieCast/banner.svg",
       details:  `
         <div class="project-description">
           <h4>Diecast Car Collection App</h4>
@@ -111,11 +111,6 @@ const Projects = () => {
           <p>
             Solo project — I built the frontend, backend and database myself; no AI was used. Working personal project, run locally (not hosted), and in real daily use tracking my actual collection rather than sample data. Source on <a href="https://github.com/multimccp00/Diecaste-car-Collection" target="_blank" rel="noopener noreferrer">GitHub</a>.
           </p>
-
-          <div class="project-images">
-            <img src="%PUBLIC_URL%/images/dieCast/Screenshot 2025-05-23 162605.png" alt="Diecast collection grid grouped by brand with add-car form" />
-            <img src="%PUBLIC_URL%/images/dieCast/Screenshot 2025-05-23 162627.png" alt="Diecast Car Collection App interface" />
-          </div>
         </div>
       `,
     },
