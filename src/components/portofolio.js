@@ -8,7 +8,7 @@ const Portfolio = () => {
 
   // Fetch image categories from the JSON file
   useEffect(() => {
-    fetch("/images.json")
+    fetch(`${process.env.PUBLIC_URL}/images.json`)
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching images:", error));
@@ -50,10 +50,10 @@ const Portfolio = () => {
           <div
             key={index}
             className="portfolio-item"
-            onClick={() => openLightbox(image.src)}
+            onClick={() => openLightbox(`${process.env.PUBLIC_URL}${image.src}`)}
           >
             <img
-              src={image.src} // Directly use the path from public folder
+              src={`${process.env.PUBLIC_URL}${image.src}`}
               alt={image.alt}
             />
           </div>

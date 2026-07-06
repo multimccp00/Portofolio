@@ -23,7 +23,7 @@ export default function App() {
       about: "About — Miguel Campos",
       resume: "Resume — Miguel Campos",
       projects: "Projects — Miguel Campos",
-      portfolio: "Portfolio — Miguel Campos",
+      portfolio: "Photography — Miguel Campos",
     };
     document.title = titles[active] || "Miguel Campos";
   }, [active]);
