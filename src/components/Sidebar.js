@@ -15,7 +15,6 @@ export default function Sidebar() {
         <span className="availability-dot" /> Open to work
       </span>
       <img src={avatar} alt="avatar" className="avatar" />
-      <h1 className="name"> <code>&lt; Miguel Campos /&gt;</code></h1>
 
       {/* Identity as a code object — "I am the object" */}
       <div className="identity-class">
