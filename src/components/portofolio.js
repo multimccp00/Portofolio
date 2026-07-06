@@ -37,12 +37,22 @@ const Portfolio = () => {
         {categories.map((category) => (
           <button
             key={category.category}
+            className={
+              selectedCategory && selectedCategory.category === category.category
+                ? "active"
+                : ""
+            }
             onClick={() => setSelectedCategory(category)}
           >
             {category.category}
           </button>
         ))}
-        <button onClick={() => setSelectedCategory(null)}>Show All</button> {/* Show All Button */}
+        <button
+          className={!selectedCategory ? "active" : ""}
+          onClick={() => setSelectedCategory(null)}
+        >
+          Show All
+        </button>
       </div>
 
       {/* Display images based on selected category or all images */}

@@ -329,11 +329,22 @@ a.identity-class .str:hover,
 --------------------------------------------------*/
 .navbar {
   display: flex;
-  flex-wrap: wrap;          /* wrap to a second row instead of overflowing */
-  gap: 0.5rem 2rem;         /* row-gap column-gap */
+  flex-wrap: nowrap;            /* keep on one line */
+  gap: 2rem;
   margin-bottom: 2rem;
   border-bottom: 1px solid #222;
   padding-bottom: 0.75rem;
+  overflow-x: auto;            /* scroll sideways when it doesn't fit */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* hide scrollbar (Firefox) */
+}
+
+.navbar::-webkit-scrollbar {
+  display: none;                /* hide scrollbar (WebKit) */
+}
+
+.nav-btn {
+  flex: 0 0 auto;              /* don't shrink; keep each tab full width */
 }
 
 .nav-btn {
@@ -517,6 +528,14 @@ section p {
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+/* active category filter — clearly highlighted */
+.portfolio-filter button.active {
+  background-color: #2f6a99;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(126, 178, 221, 0.6);
 }
 
 .portfolio-gallery {
