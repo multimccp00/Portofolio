@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import "../App.css";
 
 const Portfolio = () => {
@@ -60,12 +61,15 @@ const Portfolio = () => {
         ))}
       </div>
 
-      {/* Lightbox */}
-      {lightboxImage && (
-        <div className="lightbox active" onClick={closeLightbox}>
-          <img src={lightboxImage} alt="Full size" />
-        </div>
-      )}
+      {/* Lightbox — rendered via portal to document.body so it escapes the
+          transformed section wrapper and covers the full viewport */}
+      {lightboxImage &&
+        createPortal(
+          <div className="lightbox active" onClick={closeLightbox}>
+            <img src={lightboxImage} alt="Full size" />
+          </div>,
+          document.body
+        )}
     </section>
   );
 };
