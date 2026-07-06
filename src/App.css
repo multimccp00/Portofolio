@@ -717,7 +717,7 @@ button:active {
   flex-wrap: wrap;          /* wrap instead of overflowing off-screen */
   gap: 20px;                /* Space between images */
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;  /* align images to the left */
   align-items: flex-start;
 }
 
