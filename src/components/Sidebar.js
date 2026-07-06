@@ -37,6 +37,16 @@ export default function Sidebar() {
           </code>
       </div>
 
+      {/* Tech stack */}
+      <div className="stack">
+        <p className="stack-label"><code>{"// stack"}</code></p>
+        <div className="stack-chips">
+          {["React", "Node.js", "JavaScript", "Python", "PHP", "C#", "MySQL", "Docker"].map((t) => (
+            <span className="stack-chip" key={t}>{t}</span>
+          ))}
+        </div>
+      </div>
+
       {/* Footer section (CV + separator + social) pushed to bottom */}
       <div className="sidebar-footer">
         {/* Download CV */}

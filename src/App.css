@@ -128,6 +128,41 @@ body {
   box-shadow: none;
 }
 
+/* Tech stack chips */
+.stack {
+  width: 100%;
+}
+
+.stack-label code {
+  font-family: 'Courier New', Courier, monospace;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack-chip {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  background-color: #2a2a2c;
+  border: 1px solid #3a3a3d;
+  padding: 3px 9px;
+  border-radius: 999px;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.stack-chip:hover {
+  color: #fff;
+  border-color: rgba(126, 178, 221, 0.5);
+}
+
 /* push social section (and separator) to bottom */
 .sidebar-footer {
   margin-top: auto;
