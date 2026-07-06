@@ -2,18 +2,24 @@ import "../App.css";
 import avatar from "../imgs/avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faLocationDot, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 // Adding the necessary icons to the library
-library.add(faEnvelope, faPhone, faGithub, faLinkedin, faInstagram, faFacebook);
+library.add(faEnvelope, faPhone, faLocationDot, faDownload, faGithub, faLinkedin, faInstagram, faFacebook);
 
 export default function Sidebar() {
   return (
     <aside className="sidebar">
+      <span className="availability">
+        <span className="availability-dot" /> Open to work
+      </span>
       <img src={avatar} alt="avatar" className="avatar" />
       <h1 className="name"> <code>&lt; Miguel Campos /&gt;</code></h1>
-      <p className="tagline"><code>&lt; Full-Stack Developer /&gt;</code></p>
+      <p className="tagline"><code>&lt; Full-Stack &amp; AI Developer /&gt;</code></p>
+      <p className="location">
+        <FontAwesomeIcon icon={faLocationDot} /> Aveiro, Portugal · open to remote
+      </p>
 
       {/* Contact Info Section */}
       <div className="contact-info">
@@ -30,6 +36,17 @@ export default function Sidebar() {
             {' }'}
           </code>
       </div>
+
+      {/* Download CV */}
+      <a
+        className="cv-button"
+        href={`${process.env.PUBLIC_URL}/Miguel-Campos-CV.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
+        <FontAwesomeIcon icon={faDownload} /> Download CV
+      </a>
 
       {/* Footer section (separator + social) pushed to bottom */}
       <div className="sidebar-footer">

@@ -60,6 +60,76 @@ body {
   overflow-y: auto;            /* allow sidebar to scroll if necessary */
 }
 
+/* "Open to work" availability badge */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4ade80;
+  background-color: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+  animation: pulse 2s cubic-bezier(0.66, 0, 0, 1) infinite;
+}
+
+@keyframes pulse {
+  to { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+}
+
+/* Location line */
+.location {
+  font-size: 0.8rem;
+  color: #999;
+  margin: -0.5rem 0 0;
+  text-align: center;
+}
+
+.location svg {
+  color: #7eb2dd;
+  margin-right: 4px;
+}
+
+/* Download CV button */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #7eb2dd;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cv-button:hover {
+  background-color: #5a8eb2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(126, 178, 221, 0.3);
+}
+
+.cv-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 /* push social section (and separator) to bottom */
 .sidebar-footer {
   margin-top: auto;
@@ -91,7 +161,7 @@ body {
 
 .tagline code {
   font-family: 'Courier New', Courier, monospace; /* Monospaced font to resemble code */
-  font-size: 1.rem;
+  font-size: 1rem;
   color: #db3a34; /* Code-like color */
 }
 
@@ -107,7 +177,7 @@ body {
 .contact-info code {
   font-family: 'Courier New', Courier, monospace; /* Monospaced font */
   color: #eff5fb; /* Light blue code color */
-  font-size: 1.rem; /* Larger font size */ /* Makes the code block display on separate lines */
+  font-size: 1rem; /* Larger font size */ /* Makes the code block display on separate lines */
   margin: 8px 0; /* Adds some space between the lines */
 }
 
