@@ -20,9 +20,11 @@ body,h3, p, li, span {
   padding: 0;
 }
 
-body {
+html, body {
   background-color: #0e0e0e;
   color: #fbf5ee;
+  overflow-x: hidden;   /* guard against any horizontal overflow on mobile */
+  max-width: 100%;
 }
 
 
@@ -35,10 +37,18 @@ body {
   /* fix layout to viewport height so only main column scrolls */
   height: 100vh;            /* full viewport */
   overflow: hidden;         /* prevent outer page scrolling */
+  max-width: 100%;
 
   /* Wider margin around the whole page + bigger gap */
   padding: 40px;
   gap: 40px;
+}
+
+/* grid children must be allowed to shrink below their content width,
+   otherwise long strings/nested grids cause horizontal overflow on mobile */
+.sidebar,
+.main-column {
+  min-width: 0;
 }
 
 /* -------------------------------------------------
