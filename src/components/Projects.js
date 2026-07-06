@@ -61,23 +61,48 @@ const Projects = () => {
     },
     {
       id: 1,
-      title: "Carjockey",
-      description: "Website to help those looking for a new car",
+      title: "Car-Jockey",
+      description: "Car research app — videos, photos and average price for any model",
       image: "/images/carjockey/preview.png",
       details: `
         <div class="project-description">
-        <h4>Carjockey - A Comprehensive Car Listing Platform</h4>
-        <p>
-          <strong>Carjockey</strong> is a dynamic web application that I built from scratch, leveraging both front-end and back-end technologies. The core functionality of the platform revolves around a robust backend server built using <strong>Node.js</strong> and <strong>Express</strong>. This server handles multiple API requests, serving as the backbone for user interactions with the platform.
-        </p>
-        <h4>Key Features:</h4>
-            <ul>
-              <li><strong>car prices</strong> - Users search cars, to see the median price of that model.</li>
-              <li><strong>images</strong> - View photos about the model you search for in a grid view.</li>
-              <li><strong>video</strong> - View review videos about the model grid view.</li>
-              <li><strong>Backend Integration</strong> - Built with **Node.js** and **MySQL** for full-stack management of car data.</li>
-            </ul>
-      </div>
+          <h4>Car-Jockey — Car Research Web App</h4>
+          <p>
+            A car research web app: type in a car model and get one page with review videos, photos and the average listing price for that model. Researching a car normally means jumping between YouTube, image searches and listing sites — Car-Jockey pulls those into a single search. Built as a learning project during my Multimédia e Tecnologias da Comunicação degree at the University of Aveiro.
+          </p>
+
+          <h4>What I Built</h4>
+          <ul>
+            <li><strong>Model search with autocomplete</strong> — a search bar that queries the backend as you type and suggests up to 10 matching car models from the database.</li>
+            <li><strong>REST API</strong> — an Express backend with endpoints for full-model search and distinct-model lookup, querying a MySQL database of car listings.</li>
+            <li><strong>Review videos</strong> — fetches the top 6 "brand + model car review" videos via the YouTube Data API and shows them as a clickable thumbnail grid.</li>
+            <li><strong>Image gallery</strong> — pulls photos of the searched car from the Unsplash API.</li>
+            <li><strong>Average price</strong> — computes the average asking price across all matching listings in the database.</li>
+            <li><strong>Web scraper (in progress)</strong> — a Python scraper that collects real listings (price, km, year, fuel, gearbox, engine) from Standvirtual, with a cleaning step that normalizes make/model names; it outputs JSON, but the import into the app's database isn't wired up yet.</li>
+          </ul>
+
+          <h4>Notable</h4>
+          <p>
+            Scraping a real, live marketplace (Standvirtual) was the hardest part: the site requires browser-like request headers, and its CSS selectors shift as the site evolves, so the scraper had to be written defensively and revisited as pages changed.
+          </p>
+
+          <h4>Tech Stack</h4>
+          <p>
+            <strong>Frontend:</strong> React 18 (Create React App), React Router, Axios.
+            <strong>Backend:</strong> Node.js, Express, mysql2, CORS.
+            <strong>Database:</strong> MySQL.
+            <strong>Scraper:</strong> Python (Requests, BeautifulSoup).
+            <strong>External APIs:</strong> YouTube Data API v3, Unsplash API.
+          </p>
+          <p>
+            Solo project — I designed and built the frontend, backend, database and scraper myself; no AI tools were used. Working demo, run locally (not deployed); actively in development, with the scraper-to-database pipeline as the current work in progress. Source on <a href="https://github.com/multimccp00/Car-Jockey" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          </p>
+
+          <div class="project-images">
+            <img src="%PUBLIC_URL%/images/carjockey/homepage.png" alt="Car-Jockey homepage with search bar" />
+            <img src="%PUBLIC_URL%/images/carjockey/search.png" alt="Car-Jockey search result showing average price, image gallery and review videos" />
+          </div>
+        </div>
       `
     },
     {
