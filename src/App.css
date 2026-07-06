@@ -138,6 +138,7 @@ body {
   font-size: 0.8rem;
   color: #eff5fb;
   line-height: 1.7;
+  overflow-wrap: anywhere;   /* never let long strings (email) overflow */
 }
 
 .identity-class .cls-line {
@@ -989,23 +990,57 @@ projects
 /* -------------------------------------------------
    RESPONSIVE
 --------------------------------------------------*/
+/* Tablet — fewer project columns */
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small tablet / large phone — stack sidebar above content */
 @media (max-width: 800px) {
   .grid-container {
-    grid-template-columns: 1fr;      /* stack columns */
-    padding: 24px;                   /* slightly smaller margin mobile */
-    gap: 24px;
+    grid-template-columns: 1fr;   /* single column */
+    height: auto;                 /* content defines height */
+    overflow: visible;            /* allow normal page scroll */
+    padding: 20px;
+    gap: 20px;
   }
 
   .sidebar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
+    flex-direction: column;       /* stack vertically, full width */
+    position: static;             /* not sticky on mobile */
+    max-height: none;
+    overflow: visible;
+  }
+
+  .main-column {
+    max-height: none;             /* no internal scroll — flows with page */
+    overflow: visible;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 800px) {
+
+/* Phones — single-column projects, tighter spacing */
+@media (max-width: 560px) {
   .grid-container {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .project-grid {
     grid-template-columns: 1fr;
-    padding: 20px;
-    gap: 24px;
+  }
+
+  .project-card {
+    margin: 0;                    /* remove side margins in single column */
+  }
+
+  .main-column {
+    padding: 1.25rem;
+    padding-bottom: 2rem;
   }
 }
