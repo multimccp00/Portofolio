@@ -1027,6 +1027,9 @@ projects
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .portfolio-item {
+    width: calc(100% / 4 - 1rem);   /* 4 photos per row */
+  }
 }
 
 /* Small tablet / large phone — stack sidebar above content */
@@ -1054,6 +1057,11 @@ projects
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .portfolio-item {
+    width: calc(100% / 3 - 1rem);   /* 3 photos per row */
+    height: 160px;
+  }
 }
 
 /* Phones — single-column projects, tighter spacing */
@@ -1065,6 +1073,11 @@ projects
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    width: calc(100% / 2 - 0.5rem); /* 2 photos per row */
+    height: 150px;
   }
 
   .project-card {
