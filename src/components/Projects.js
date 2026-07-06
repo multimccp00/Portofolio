@@ -82,23 +82,41 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Diecast Car Collection Project",
-      description: "Manage and display a collection of diecast cars",
+      title: "Diecast Car Collection App",
+      description: "Full-stack web app for cataloging a personal die-cast car collection",
       image: "/images/dieCast/Screenshot 2025-05-23 162627.png",
       details:  `
         <div class="project-description">
-        <h4>Diecast Car Collection Project</h4>
-        <p>
-          This project lets you manage and display a collection of diecast cars. Users can add, view, update, and delete cars in their collection. The application is built with a **React** frontend and an **Express** backend, using a **MySQL** database to store car data.
-        </p>
-        <h4>Key Features:</h4>
-            <ul>
-              <li><strong>Add Cars</strong> - Users can add new diecast cars with details like model, brand, color, year, and more.</li>
-              <li><strong>View and Manage</strong> - View cars in a list or grid view. Edit and delete entries easily.</li>
-              <li><strong>Filter & Sort</strong> - Cars can be filtered by attributes such as brand, model, and condition.</li>
-              <li><strong>Backend Integration</strong> - Built with **Node.js** and **MySQL** for full-stack management of car data.</li>
-            </ul>
-      </div>
+          <h4>Diecast Car Collection App</h4>
+          <p>
+            A full-stack web app for cataloging a personal die-cast car collection. I collect die-cast cars and wanted a proper way to catalog them instead of tracking them by hand — and it was a chance to build a complete full-stack application (React frontend, REST API, relational database) end to end. I still use it to track my actual collection.
+          </p>
+
+          <h4>What I Built</h4>
+          <ul>
+            <li><strong>Car catalog with full CRUD</strong> — add, view, edit and delete cars through a REST API, each storing brand, model, color, year, die-cast brand, collection, condition and edition.</li>
+            <li><strong>Filtering and sorting</strong> — narrow and order the car list by its attributes.</li>
+            <li><strong>List/grid view toggle</strong> — switch between two layouts for browsing the collection.</li>
+            <li><strong>Dark/light theme toggle</strong> — switchable UI theme.</li>
+            <li><strong>Delete confirmation modal</strong> — prevents accidental removal of a car.</li>
+          </ul>
+
+          <h4>Tech Stack</h4>
+          <p>
+            <strong>Frontend:</strong> React 18 (Create React App), React Router, Axios.
+            <strong>Backend:</strong> Node.js, Express.
+            <strong>Database:</strong> MySQL (mysql2 driver).
+            <strong>Dev tooling:</strong> nodemon.
+          </p>
+          <p>
+            Solo project — I built the frontend, backend and database myself; no AI was used. Working personal project, run locally (not hosted), and in real daily use tracking my actual collection rather than sample data. Source on <a href="https://github.com/multimccp00/Diecaste-car-Collection" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          </p>
+
+          <div class="project-images">
+            <img src="%PUBLIC_URL%/images/dieCast/Screenshot 2025-05-23 162605.png" alt="Diecast collection grid grouped by brand with add-car form" />
+            <img src="%PUBLIC_URL%/images/dieCast/Screenshot 2025-05-23 162627.png" alt="Diecast Car Collection App interface" />
+          </div>
+        </div>
       `,
     },
     {
