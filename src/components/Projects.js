@@ -84,7 +84,7 @@ const Projects = () => {
       id: 2,
       title: "Diecast Car Collection App",
       description: "Full-stack web app for cataloging a personal die-cast car collection",
-      image: "/images/dieCast/banner.svg",
+      image: "/images/dieCast/logo.png",
       details:  `
         <div class="project-description">
           <h4>Diecast Car Collection App</h4>

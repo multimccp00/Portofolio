@@ -176,6 +176,11 @@ a.identity-class .str:hover,
   color: #d19a66;          /* boolean value */
 }
 
+/* array items: one skill per line, indented inside the [ ] */
+.identity-class .skill-line {
+  padding-left: 2.4rem;
+}
+
 /* push social section (and separator) to bottom */
 .sidebar-footer {
   margin-top: auto;
