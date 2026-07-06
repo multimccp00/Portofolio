@@ -16,37 +16,38 @@ export default function Sidebar() {
       </span>
       <img src={avatar} alt="avatar" className="avatar" />
       <h1 className="name"> <code>&lt; Miguel Campos /&gt;</code></h1>
-      <p className="tagline"><code>&lt; Full-Stack &amp; AI Developer /&gt;</code></p>
-      <p className="location">
-        <FontAwesomeIcon icon={faLocationDot} /> Aveiro, Portugal · open to remote
-      </p>
 
-      {/* Contact Info Section */}
-      <div className="contact-info">
-          <code>
-            <span className="const">const</span> <span className="contact">contacts</span>() = {'{ '}
-            <div className="contact-item">
-              <FontAwesomeIcon icon={faEnvelope} />
-              <span> miguelccp@gmail.com</span>
-            </div>
-            <div className="contact-item" >
-              <FontAwesomeIcon icon={faPhone} />
-              <span> +351 919562259</span>
-            </div>
-            {' }'}
-          </code>
-      </div>
-
-      {/* Skills / tech stack */}
-      <div className="stack">
+      {/* Identity as a code object — "I am the object" */}
+      <div className="identity-class">
         <code>
-          <span className="const">const</span> <span className="contact">skills</span> = {'[ '}
+          <div className="cls-line">
+            <span className="kw">class</span> <span className="classname">MiguelCampos</span> {'{'}
+          </div>
+          <div className="prop-line">
+            <span className="prop">role</span> = <span className="str">"Full-Stack &amp; AI Developer"</span>
+          </div>
+          <div className="prop-line">
+            <span className="prop">location</span> = <span className="str">"Aveiro, Portugal"</span>
+          </div>
+          <div className="prop-line">
+            <span className="prop">remote</span> = <span className="bool">true</span>
+          </div>
+          <div className="prop-line">
+            <span className="prop">email</span> = <a className="str" href="mailto:miguelccp@gmail.com">"miguelccp@gmail.com"</a>
+          </div>
+          <div className="prop-line">
+            <span className="prop">phone</span> = <a className="str" href="tel:+351919562259">"+351 919562259"</a>
+          </div>
+          <div className="prop-line">
+            <span className="prop">skills</span> = {'['}
+          </div>
           <div className="stack-chips">
             {["React", "Node.js", "JavaScript", "Python", "PHP", "C#", "MySQL", "Docker"].map((t) => (
               <span className="stack-chip" key={t}>{t}</span>
             ))}
           </div>
-          {' ]'}
+          <div className="cls-line">{']'}</div>
+          <div className="cls-line">{'}'}</div>
         </code>
       </div>
 

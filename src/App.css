@@ -128,32 +128,59 @@ body {
   box-shadow: none;
 }
 
-/* Skills / tech stack — matches the "const contacts()" code style */
-.stack {
+/* Identity rendered as a code class — "I am the object" */
+.identity-class {
   width: 100%;
 }
 
-.stack code {
+.identity-class code {
   font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
   color: #eff5fb;
-  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.stack .const {
-  font-family: 'Courier New', Courier, monospace;
-  color: #0C7797;
+.identity-class .cls-line {
+  color: #cbd5e1;
 }
 
-.stack .contact {
-  font-family: 'Courier New', Courier, monospace;
-  color: #db3a34;
+.identity-class .prop-line {
+  padding-left: 1.2rem;   /* indent properties inside the class body */
+}
+
+.identity-class .kw {
+  color: #0C7797;          /* class keyword */
+}
+
+.identity-class .classname {
+  color: #e5c07b;          /* class name */
+}
+
+.identity-class .prop {
+  color: #7eb2dd;          /* property names */
+  display: inline-block;
+  min-width: 5.5em;        /* align the = signs */
+}
+
+.identity-class .str {
+  color: #98c379;          /* string values */
+  text-decoration: none;
+}
+
+a.identity-class .str:hover,
+.identity-class a.str:hover {
+  text-decoration: underline;
+}
+
+.identity-class .bool {
+  color: #d19a66;          /* boolean value */
 }
 
 .stack-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 8px 0 8px 0.7rem;
+  margin: 8px 0 8px 1.2rem;
 }
 
 .stack-chip {
