@@ -37,19 +37,18 @@ export default function Sidebar() {
           </code>
       </div>
 
-      {/* Download CV */}
-      <a
-        className="cv-button"
-        href={`${process.env.PUBLIC_URL}/Miguel-Campos-CV.pdf`}
-        target="_blank"
-        rel="noopener noreferrer"
-        download
-      >
-        <FontAwesomeIcon icon={faDownload} /> Download CV
-      </a>
-
-      {/* Footer section (separator + social) pushed to bottom */}
+      {/* Footer section (CV + separator + social) pushed to bottom */}
       <div className="sidebar-footer">
+        {/* Download CV */}
+        <a
+          className="cv-button"
+          href={`${process.env.PUBLIC_URL}/Miguel-Campos-CV.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+        >
+          <FontAwesomeIcon icon={faDownload} /> Download CV
+        </a>
         <hr className="sidebar-separator" />
         {/* Social Links */}
         <div className="social">

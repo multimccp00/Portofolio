@@ -121,12 +121,10 @@ body {
 
 .cv-button:hover {
   background-color: #5a8eb2;
-  transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(126, 178, 221, 0.3);
 }
 
 .cv-button:active {
-  transform: translateY(0);
   box-shadow: none;
 }
 
@@ -390,7 +388,6 @@ section p {
 }
 
 .card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
   border-color: rgba(126, 178, 221, 0.35);
 }
@@ -533,18 +530,15 @@ button {
   border-radius: 8px;
   margin-bottom: 25px;
   transition: background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 button:hover {
   background-color: #5a8eb2;
-  transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(126, 178, 221, 0.3);
 }
 
 button:active {
-  transform: translateY(0);
   box-shadow: none;
 }
 
@@ -626,7 +620,6 @@ button:active {
 
 /* Hover effect for the project card */
 .project-card:hover {
-  transform: translateY(-8px); /* Subtle hover effect */
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
   border-color: rgba(126, 178, 221, 0.4);
 }
@@ -677,16 +670,15 @@ button:active {
   flex: 1 1 300px;          /* responsive: shrink/grow, min ~300px */
   min-width: 0;             /* allow shrinking below content size */
   max-width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 220px;            /* uniform height so mismatched screenshots line up */
+  object-fit: cover;        /* crop to fill the box instead of stretching */
+  object-position: top;     /* show the top of tall screenshots, not the middle */
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-description .project-images img:hover {
-  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
@@ -853,10 +845,6 @@ projects
 }
 .details-header .close-btn:hover {
   background: #0056d2;
-  transform: translateY(-1px);
-}
-.details-header .close-btn:active {
-  transform: translateY(0);
 }
 .project-details {
   position: relative;
@@ -904,7 +892,6 @@ projects
 }
 
 .card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
   border-color: rgba(126, 178, 221, 0.35);
 }
@@ -943,11 +930,6 @@ projects
   width: 80px;  /* Adjust the size of the logo */
   height: 80px;
   object-fit: contain;  /* Ensures the logo fits within the allocated space */
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.card:hover .card-logo img {
-  transform: scale(1.12) rotate(-3deg);
 }
 
 /* -------------------------------------------------
