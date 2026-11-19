@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const skills = [
+  { skill: "REST APIs", level: 80 },
+  { skill: "Google Apigee", level: 50 },
+  { skill: "Oracle SOA Suite", level: 45 },
   { skill: "Python", level: 90 },
   { skill: "Generative AI", level: 85 },
   { skill: "Local LLMs / Ollama", level: 85 },
@@ -16,6 +19,10 @@ const skills = [
 ];
 
 const tools = [
+  { tool: "Google Apigee", level: 50, logo: null, badge: "A" },
+  { tool: "Oracle SOA Suite / JDeveloper", level: 45, logo: "/images/logos/oracle.svg" },
+  { tool: "Postman", level: 60, logo: "/images/logos/postman.svg" },
+  { tool: "SoapUI", level: 40, logo: null, badge: "S" },
   { tool: "VS Code", level: 80, logo: "/images/logos/Visual_Studio_Code.webp" },
   { tool: "PyCharm", level: 65, logo: "/images/logos/PyCharm.png" },
   { tool: "Figma", level: 70, logo: "/images/logos/Figma.webp" },
@@ -126,10 +133,12 @@ export default function Resume() {
       <section>
         <h3>Tools</h3>
         <div className="card-grid">
-          {tools.map(({ tool, level, logo }) => (
+          {tools.map(({ tool, level, logo, badge }) => (
             <div className="card fade-in" key={tool}>
               <div className="card-logo">
-                <img src={`${process.env.PUBLIC_URL}${logo}`} alt={tool} />
+                {logo
+                  ? <img src={`${process.env.PUBLIC_URL}${logo}`} alt={tool} />
+                  : <span className="logo-badge" aria-hidden="true">{badge}</span>}
               </div>
               <h3>{tool}</h3>
               <div className="progress-bar">
