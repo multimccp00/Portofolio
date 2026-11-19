@@ -261,13 +261,13 @@ const Projects = () => {
     {
       id: 7,
       title: "MangaShelf",
-      description: "Self-hosted manga library that browses, reads, and imports new series",
+      description: "Self-hosted manga library that reads offline, syncs progress, and imports new series",
       image: "/images/mangashelf/banner.png",
       details: `
         <div class="project-description">
           <h4>MangaShelf — Self-Hosted Manga & Comic Library</h4>
           <p>
-            A self-hosted web app that turns folders of manga/comics on disk into a searchable, taggable library you can browse, read and expand from any device — with a pluggable system for importing new series from online sources. I had thousands of comic folders on disk with no good way to browse them, track progress or read on my phone, and existing tools either didn't handle a library at this scale or required pushing my collection to a cloud service — so I built my own, running entirely on my own machine and network. It grew from a local viewer into a tool that can also <em>find and import</em> series it doesn't have yet.
+            A self-hosted web app that turns folders of manga/comics on disk into a searchable, taggable library you can browse, read (even offline) and expand from any device — phone, tablet or desktop — with a pluggable system for importing new series from online sources. I had thousands of comic folders on disk with no good way to browse them, track progress or read on my phone, and existing tools either didn't handle a library at this scale or required pushing my collection to a cloud service — so I built my own, running entirely on my own machine and network. It grew from a local viewer into a tool that can also <em>find and import</em> series it doesn't have yet.
           </p>
 
           <h4>What I Built</h4>
@@ -280,25 +280,33 @@ const Projects = () => {
             <li><strong>Search the web to import</strong> — one search bar queries every source concurrently, ranks results across sources, and annotates each with its readable chapter count so you can tell "1 chapter" from "124" before importing.</li>
             <li><strong>Read-before-import preview</strong> — stream any chapter live (proxied through the server) to preview a series before committing it to disk; nothing downloads until you import.</li>
             <li><strong>Resilient import queue</strong> — imports run server-side and persist across restarts, so an import started on a phone survives closing the tab and shows up on any device.</li>
-            <li><strong>Read from anywhere</strong> — the frontend ships as a precompiled, self-contained bundle so the reader works on a phone with no internet; served over Tailscale (private tailnet only), gated by an optional password with per-device "remember me" tokens.</li>
+            <li><strong>Read from anywhere</strong> — the frontend ships as a precompiled, self-contained bundle; served over Tailscale (private tailnet only), gated by an optional password with per-device "remember me" tokens.</li>
+            <li><strong>Offline reading</strong> — save whole series or just the chapters you want. A service worker plus Cache Storage serves saved pages, covers and series data with no connection; a "Downloaded" screen lists what's on the device, "keep the next N chapters" tops itself up when online, and the app verifies its saved list on start and drops chapters whose files disappeared.</li>
+            <li><strong>Progress that survives going offline</strong> — reading position and status changes made offline are queued on the device and replayed on reconnect with client timestamps, so the newest write wins and finishing a series still marks it Completed.</li>
+            <li><strong>Standalone Android app for my tablet</strong> — a small Java WebView wrapper (built from the command line, no Android Studio) installs MangaShelf as its own app, with a native storage bridge so downloads can live on an SD card and move between app storage and the card.</li>
+            <li><strong>Hidden-tags quick filter</strong> — a user-defined list of tags to hide, with a one-tap Hiding/Showing switch for public settings, plus a job that refreshes tags from the source across the whole library.</li>
+            <li><strong>Profile screen</strong> — reading record, status ledger and cover shelves, backed by lifetime counters so re-reading a series can't erase history.</li>
+            <li><strong>Responsive on phone, tablet and desktop</strong> — tablet-width layout rules (the top bar wraps instead of clipping) and PWA install support.</li>
             <li><strong>Multi-library support</strong> — separate libraries with independent scan paths and a quick switcher.</li>
           </ul>
 
           <h4>Notable</h4>
           <ul>
-            <li><strong>Scale</strong> — manages a real library of <strong>3,400+ series</strong> with faceted search and background rescans that stay responsive.</li>
+            <li><strong>Scale</strong> — manages a real library of <strong>3,300+ series</strong> with faceted search and background rescans that stay responsive.</li>
             <li><strong>Safe, shareable extensibility</strong> — the declarative extension system adds new manga sites via a JSON manifest the engine <em>interprets</em>; it can never execute arbitrary code, so extensions are safe to share in a multi-user deployment, unlike a plugin system that runs untrusted Python.</li>
             <li><strong>Cross-source, cross-device import pipeline</strong> — searches all sources concurrently under a deadline, dedupes only true duplicates (never collapsing a 1-chapter stub over a 124-chapter full run), and persists the download queue so imports survive restarts and follow you across devices.</li>
             <li><strong>Safe concurrent DB access</strong> — the scanner/DB core was single-threaded, so the web layer reopens SQLite with <code>check_same_thread=False</code> behind a lock to stay safe under FastAPI's threadpool without forking the core logic.</li>
+            <li><strong>True offline reading, verified on real hardware</strong> — page images are stored as files on the tablet's SD card by a native bridge and served to the web view through request interception and a service-worker client, so chapters read with airplane mode on. A startup check reconciles the saved list against the files actually present, after I found the browser's own storage can be cleared without warning.</li>
+            <li><strong>Conflict-safe offline sync</strong> — queued writes carry client timestamps and the server ignores stale ones, so reading on two devices can't overwrite newer progress; covered by a replay test (newest wins, finish still completes, order preserved).</li>
             <li><strong>Security-conscious serving</strong> — path-sandboxed image endpoints (every file must live inside a configured library root), a fail-closed SSRF guard on the page-proxy, size caps on outbound fetches, and token-gated access unreachable outside the private tailnet.</li>
           </ul>
 
           <h4>Tech Stack</h4>
           <p>
-            Python 3, FastAPI, Uvicorn, Pydantic, SQLite, Pillow, PDF support, Playwright (headless-browser scraping for the AI/private adapters). Frontend: React authored in JSX, precompiled to a single minified bundle with <strong>esbuild</strong> (cache-busted via a version token) — no in-browser transpilation, no external CDN dependency. Runs on Windows; exposed to other devices over a <strong>Tailscale</strong> private network.
+            Python 3, FastAPI, Uvicorn, Pydantic, SQLite, Pillow, PDF support, Playwright (headless-browser scraping for the AI/private adapters), pytest. Frontend: React authored in JSX, precompiled to a single minified bundle with <strong>esbuild</strong> (cache-busted via a version token) — no in-browser transpilation, no external CDN dependency — plus a <strong>service worker</strong> for offline use. Android: a Java <strong>WebView</strong> wrapper. Runs on Windows; exposed to other devices over a <strong>Tailscale</strong> private network.
           </p>
           <p>
-            Solo, AI-assisted — I designed the architecture and built the whole thing (backend API, SQLite schema and migrations, disk scanner, the source-adapter/extension system, and the React reader/library frontend) using coding agents during implementation and Claude for the initial UI direction. Personal / self-hosted, running for my own daily use over my tailnet. Open-source on <a href="https://github.com/multimccp00/MangaShelf" target="_blank" rel="noopener noreferrer">GitHub</a> — the committed codebase deliberately ships only API-based, non-piracy sources.
+            Solo, AI-assisted — I designed the architecture and built the whole thing (backend API, SQLite schema and migrations, disk scanner, the source-adapter/extension system, the React reader/library frontend, the offline/sync layer and the Android wrapper) using coding agents during implementation and Claude for the initial UI direction. Personal / self-hosted, running for my own daily use over my tailnet on desktop, phone and a Galaxy Tab S2 tablet. Open-source on <a href="https://github.com/multimccp00/MangaShelf" target="_blank" rel="noopener noreferrer">GitHub</a> — the committed codebase deliberately ships only API-based, non-piracy sources.
           </p>
 
           <div class="project-images">
