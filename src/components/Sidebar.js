@@ -12,7 +12,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <span className="availability">
-        <span className="availability-dot" /> Working at NOS SGPS
+        <span className="availability-dot" /><span className="availability-text">Working at NOS SGPS</span>
       </span>
       <img src={avatar} alt="avatar" className="avatar" />
 
