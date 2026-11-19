@@ -92,7 +92,7 @@ html, body {
   color: #f87171;
   background-color: rgba(248, 113, 113, 0.12);
   border: 1px solid rgba(248, 113, 113, 0.35);
-  padding: 5px 12px;
+  padding: 6px 12px 4px;       /* text sits 1px lower: caps were riding high in the pill */
   border-radius: 999px;
 }
 
@@ -101,6 +101,7 @@ html, body {
   height: 8px;
   border-radius: 50%;
   background-color: #f87171;
+  transform: translateY(-1px);  /* centre on the letters, not the line box */
   box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.6);
   animation: pulse 2s cubic-bezier(0.66, 0, 0, 1) infinite;
 }
