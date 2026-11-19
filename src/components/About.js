@@ -7,6 +7,11 @@ const whatIDo = [
     emoji: "💾",
   },
   {
+    title: "Middleware & API Engineering",
+    desc: "Designing and developing APIs and MCP servers with Google Apigee and Oracle SOA Suite.",
+    emoji: "🔌",
+  },
+  {
     title: "Web Development",
     desc: "High-quality development of sites at a high level.",
     emoji: "💻",
@@ -61,7 +66,7 @@ export default function About() {
     <section>
       <h2>About Me</h2>
       <p>
-        I'm a Software Engineer with professional experience building production web applications and AI-powered software. At Kaizen Institute I shipped production web features and, from scratch, designed and built <strong>Personae</strong> — a privacy-first AI workspace that was later adopted internally to support the company's AI workflows. I work across Python, backend systems, generative AI / local LLMs, and full-stack engineering (React, Node.js, C#). What drives me is turning emerging AI technologies into practical, useful products — not just functional websites, but experiences that stand out.
+        I'm a Middleware Engineer at <strong>NOS SGPS</strong>, where I develop APIs and MCP servers using Google Apigee and Oracle SOA Suite. Alongside that, I continue as a freelance full-stack developer for the <strong>Associação de Andebol de Aveiro</strong>, building Referee Tracker, which is now in use by referees. Before NOS I was a Software Engineer at Kaizen Institute, where I shipped production web features and, from scratch, designed and built <strong>Personae</strong> — a privacy-first AI workspace that was later adopted internally to support the company's AI workflows. I work across middleware and API design, Python, backend systems, full-stack engineering (React, Node.js, C#), and I still bring generative AI / local LLMs into the products I build. What drives me is turning emerging AI technologies into practical, useful products — not just functional websites, but experiences that stand out.
       </p>
       <p>I believe the best way to learn is by doing. I work with complete focus: I don’t leave things unfinished, I like solving problems on my own, and I see every project as a real opportunity to grow. What drives me is innovation — creating technological solutions that are useful, expressive, and meaningful.</p>
       <p>My personal mantra: <b>"Build with purpose. Play with heart. Code for impact."</b></p>

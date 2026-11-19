@@ -326,7 +326,7 @@ const Projects = () => {
         <div class="project-description">
           <h4>Referee Tracker — Earnings Tracking & Exam Prep for Handball Referees</h4>
           <p>
-            Handball referees juggle two separate needs — tracking their games, payments and travel costs, and studying a large official rulebook to pass certification exams. No single tool did both, and nothing let a referee manage that data on both a computer and a phone from one shared source of truth. Referee Tracker combines earnings tracking and exam prep in one app that stays in sync between a desktop app and a native Android app. It is being developed in collaboration with the <strong>Associação de Andebol de Aveiro (AAA)</strong>.
+            Handball referees juggle two separate needs — tracking their games, payments and travel costs, and studying a large official rulebook to pass certification exams. No single tool did both, and nothing let a referee manage that data on both a computer and a phone from one shared source of truth. Referee Tracker combines earnings tracking and exam prep in one app that stays in sync between a desktop app and a native Android app. I build and maintain it as a freelance full-stack developer for the <strong>Associação de Andebol de Aveiro (AAA)</strong>, and it is now in use by referees.
           </p>
 
           <h4>What I Built</h4>
@@ -350,7 +350,7 @@ const Projects = () => {
           <h4>Tech Stack</h4>
           <p>Python · Tkinter (desktop UI) · Kivy (Android UI) · MySQL via PyMySQL (with SQLite/JSON fallback) · PyMuPDF &amp; Pillow (PDF/image handling) · openpyxl (Excel import) · buildozer + python-for-android on WSL2/Ubuntu (Android build pipeline) · pyjnius + Android FileProvider (native PDF opening).</p>
           <p>
-            Solo developer, built with AI pair-programming assistance — I owned the full scope (product design, desktop and mobile UIs, database architecture and the Android build/release pipeline), using AI to accelerate implementation and debugging. Working prototype in personal use; not yet published to an app store. Source on <a href="https://github.com/multimccp00/Accounting-Referee" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            Solo developer, built with AI pair-programming assistance — I owned the full scope (product design, desktop and mobile UIs, database architecture and the Android build/release pipeline), using AI to accelerate implementation and debugging. In use by referees of the Associação de Andebol de Aveiro, where I continue as freelance full-stack developer. Source on <a href="https://github.com/multimccp00/Accounting-Referee" target="_blank" rel="noopener noreferrer">GitHub</a>.
           </p>
 
           <div class="project-images">

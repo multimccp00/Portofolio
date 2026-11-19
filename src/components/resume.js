@@ -78,7 +78,19 @@ export default function Resume() {
         <h3>Experience</h3>
         <ul>
           <li>
-            <strong>Software Engineer at Kaizen Institute</strong> <em>(official title: Web Developer)</em> - <em>2026 – Present</em>
+            <strong>Middleware Engineer at NOS SGPS</strong> - <em>November 2026 – Present</em>
+            <ul>
+              <li>Develop APIs and MCP servers using Google Apigee and Oracle SOA Suite.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Freelance Full-Stack Developer at Associação de Andebol de Aveiro</strong> - <em>Ongoing</em>
+            <ul>
+              <li>Full-stack development of <strong>Referee Tracker</strong>, the earnings-tracking and exam-prep app (desktop and native Android) now in use by the association's referees.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Software Engineer at Kaizen Institute</strong> <em>(official title: Web Developer)</em> - <em>2026 – July 2026</em>
             <ul>
               <li>Developed backend functionality and production web features for the company website (WordPress, PHP, Docker).</li>
               <li>Improved website performance, Core Web Vitals and technical SEO.</li>

@@ -12,7 +12,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <span className="availability">
-        <span className="availability-dot" /> Open to work
+        <span className="availability-dot" /> Working at NOS SGPS
       </span>
       <img src={avatar} alt="avatar" className="avatar" />
 
@@ -23,7 +23,7 @@ export default function Sidebar() {
             <span className="kw">class</span> <span className="classname">MiguelCampos</span> {'{'}
           </div>
           <div className="prop-line">
-            <span className="prop">role</span> = <span className="str">"Software Engineer · AI &amp; Full-Stack"</span>
+            <span className="prop">role</span> = <span className="str">"Middleware Engineer · APIs, MCP &amp; Full-Stack"</span>
           </div>
           <div className="prop-line">
             <span className="prop">location</span> = <span className="str">"Aveiro, Portugal"</span>
@@ -40,7 +40,7 @@ export default function Sidebar() {
           <div className="prop-line">
             <span className="prop">skills</span> = [
           </div>
-          {["Python", "Generative AI", "Local LLMs", "Ollama", "PyTorch", "MCP", "React", "Node.js", "C#", "Docker", "SQLite", "MySQL"].map((t, i, arr) => (
+          {["Google Apigee", "Oracle SOA Suite", "REST APIs", "Python", "Generative AI", "Local LLMs", "Ollama", "PyTorch", "MCP", "React", "Node.js", "C#", "Docker", "SQLite", "MySQL"].map((t, i, arr) => (
             <div className="skill-line" key={t}>
               <span className="str">"{t}"</span>{i < arr.length - 1 ? "," : ""}
             </div>
