@@ -370,7 +370,7 @@ const Projects = () => {
       id: 6,
       title: "Referee Tracker",
       description: "Cross-platform earnings tracker & exam trainer for handball referees",
-      image: "/images/referee-tracker/banner.svg",
+      image: "/images/referee-tracker/banner.png",
       details: `
         <div class="project-description">
           <h4>Referee Tracker — Earnings Tracking & Exam Prep for Handball Referees</h4>
