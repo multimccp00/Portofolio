@@ -6,6 +6,55 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 9,
+      title: "DriftFetch",
+      description: "Windows download manager that watches your clipboard and saves videos and galleries",
+      image: "/images/driftfetch/banner.png",
+      details: `
+        <div class="project-description">
+          <h4>DriftFetch — A Quiet, Capable Download Manager for Windows</h4>
+          <p>
+            Copy a link to a video or an image gallery and DriftFetch finds the best version and saves it to your PC. Most downloaders are either a command line or an ad-filled window; I wanted one with a real queue and plain-words status that stays out of the way — no account, no ads, no telemetry, everything stored on the machine. It wraps proven open-source engines (yt-dlp, gallery-dl, FFmpeg) in a proper desktop app and ships with its own website.
+          </p>
+
+          <h4>What I Built</h4>
+          <ul>
+            <li><strong>Clipboard watcher</strong> — copy a link in any app and DriftFetch picks it up, even from the system tray; links can also be pasted in batches of up to 200.</li>
+            <li><strong>Best-quality resolution</strong> — resolves redirects and embedded players, lists the formats a site offers, picks the best one, and joins audio and video at the end without re-encoding.</li>
+            <li><strong>Galleries and collections</strong> — image galleries and multi-item links open as a thumbnail picker so you choose what to save; playlists always wait for your selection.</li>
+            <li><strong>Honest status</strong> — every download has a plain-words state (checking, downloading with real size, speed and time left, rate limited, choose items, sign-in needed, saved), and failures say why and give the one step that fixes them.</li>
+            <li><strong>A proper queue</strong> — pause/resume, drag-to-reorder, "download next", automatic retries with a countdown, disk-space checks, speed limit, optional daily schedule, per-site rules and duplicate detection, all persisted in a local SQLite database.</li>
+            <li><strong>Sign-in support without leaking secrets</strong> — sites that need a login can be signed in to inside the app; sessions are filtered to the site's domain and encrypted with Windows DPAPI. DRM and paywalls are deliberately not bypassed.</li>
+            <li><strong>Sandboxed extensions</strong> — site-specific readers can be added as extensions that run in a sandbox; none ship with the app.</li>
+            <li><strong>Backups, history and CSV export</strong> — encrypted backups, a searchable history, and a watched folder for <code>.txt</code> link lists.</li>
+            <li><strong>Marketing site</strong> — an Astro website, published with GitHub Pages, whose version and download links are driven from one data file and checked against the real release at build time.</li>
+          </ul>
+
+          <h4>Notable</h4>
+          <ul>
+            <li><strong>Security-conscious Electron architecture</strong> — the interface talks to the main process only through a narrow, typed preload bridge; cookies, passwords and signed URLs never reach the renderer or the logs.</li>
+            <li><strong>Orchestrating third-party engines safely</strong> — the app asks yt-dlp what a link points to, routes galleries to gallery-dl, bundles Deno for sites that need JavaScript challenges and a remux-only FFmpeg build, and pins every engine to a SHA-256 checksum in a lockfile. Release builds list SHA-256 checksums and include the source of the bundled GPL/LGPL programs.</li>
+            <li><strong>Release engineering</strong> — an installer and a portable build per release, with scripted checks (installer, packaged smoke tests, link checks) and a test suite of 27 files.</li>
+            <li><strong>Private by design</strong> — the app talks only to the sites you download from and to GitHub and Codeberg to check for engine updates, which can be switched off.</li>
+          </ul>
+
+          <h4>Tech Stack</h4>
+          <p>
+            Electron, React, TypeScript, SQLite (queue and history), Vite, Vitest and Playwright (tests and smoke checks); yt-dlp, gallery-dl, Deno and FFmpeg bundled as engines. Website: Astro on GitHub Pages. Windows 10/11 x64; the builds are unsigned, so SmartScreen may warn on first run.
+          </p>
+          <p>
+            Solo, AI-assisted — I designed the product, the queue and engine layer, the interface and the website, using coding agents during implementation. Pre-release, open source under the MIT licence. Visit the <a href="https://multimccp00.github.io/driftfetch/" target="_blank" rel="noopener noreferrer">DriftFetch website</a> or the <a href="https://github.com/multimccp00/driftfetch" target="_blank" rel="noopener noreferrer">GitHub repository</a>; installers are on the <a href="https://github.com/multimccp00/driftfetch/releases" target="_blank" rel="noopener noreferrer">releases page</a>.
+          </p>
+
+          <div class="project-images">
+            <img src="%PUBLIC_URL%/images/driftfetch/downloads.png" alt="DriftFetch downloads queue with two active downloads, one waiting and three completed" />
+            <img src="%PUBLIC_URL%/images/driftfetch/history.png" alt="DriftFetch history of saved videos" />
+            <img src="%PUBLIC_URL%/images/driftfetch/settings.png" alt="DriftFetch settings for clipboard watching and download behaviour" />
+          </div>
+        </div>
+      `,
+    },
+    {
       id: 8,
       title: "Personae",
       description: "Self-hosted local AI workspace — assistants, translation & image generation",
