@@ -43,7 +43,7 @@ const Projects = () => {
             Electron, React, TypeScript, SQLite (queue and history), Vite, Vitest and Playwright (tests and smoke checks); yt-dlp, gallery-dl, Deno and FFmpeg bundled as engines. Website: Astro on GitHub Pages. Windows 10/11 x64; the builds are unsigned, so SmartScreen may warn on first run.
           </p>
           <p>
-            Solo, AI-assisted — I designed the product, the queue and engine layer, the interface and the website, using coding agents during implementation. Pre-release, open source under the MIT licence. Visit the <a href="https://multimccp00.github.io/driftfetch/" target="_blank" rel="noopener noreferrer">DriftFetch website</a> or the <a href="https://github.com/multimccp00/driftfetch" target="_blank" rel="noopener noreferrer">GitHub repository</a>; installers are on the <a href="https://github.com/multimccp00/driftfetch/releases" target="_blank" rel="noopener noreferrer">releases page</a>.
+            Solo project — I designed and built the product, the queue and engine layer, the interface and the website. Pre-release, open source under the MIT licence. Visit the <a href="https://multimccp00.github.io/driftfetch/" target="_blank" rel="noopener noreferrer">DriftFetch website</a> or the <a href="https://github.com/multimccp00/driftfetch" target="_blank" rel="noopener noreferrer">GitHub repository</a>; installers are on the <a href="https://github.com/multimccp00/driftfetch/releases" target="_blank" rel="noopener noreferrer">releases page</a>.
           </p>
 
           <div class="project-images">

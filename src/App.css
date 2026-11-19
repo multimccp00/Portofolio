@@ -206,7 +206,7 @@ a.identity-class .str:hover,
 
 /* Skills flow inline, wrapping like a normal array, so the list stays short */
 .identity-class .skills-inline {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 /* push social section (and separator) to bottom */
@@ -498,10 +498,17 @@ section p {
 --------------------------------------------------*/
 .skills {
   margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2.5rem;
 }
 
 .skill-bar {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .skills { grid-template-columns: 1fr; }
 }
 
 .skill-bar label {
@@ -817,8 +824,18 @@ button:active {
 
 .resume ul li {
   font-size: 1rem;
+  line-height: 1.55;
   color: #ccc;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Bullets under a job/course title: breathing room above, tighter between them */
+.resume ul li > ul {
+  margin-top: 0.45rem;
+}
+
+.resume ul ul li {
+  margin-bottom: 0.45rem;
 }
 
 .resume ul li strong {
