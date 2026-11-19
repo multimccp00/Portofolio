@@ -40,11 +40,11 @@ export default function Sidebar() {
           <div className="prop-line">
             <span className="prop">skills</span> = [
           </div>
-          {["Google Apigee", "Oracle SOA Suite", "REST APIs", "Python", "Generative AI", "Local LLMs", "Ollama", "PyTorch", "MCP", "React", "Node.js", "C#", "Docker", "SQLite", "MySQL"].map((t, i, arr) => (
-            <div className="skill-line" key={t}>
-              <span className="str">"{t}"</span>{i < arr.length - 1 ? "," : ""}
-            </div>
-          ))}
+          <div className="skill-line skills-inline">
+            {["Google Apigee", "Oracle SOA Suite", "REST APIs", "Python", "Generative AI", "Local LLMs", "Ollama", "PyTorch", "MCP", "React", "Node.js", "C#", "Docker", "SQLite", "MySQL"].map((t, i, arr) => (
+              <span key={t}><span className="str">"{t}"</span>{i < arr.length - 1 ? ", " : ""}</span>
+            ))}
+          </div>
           <div className="prop-line">]</div>
           <div className="cls-line">{'}'}</div>
         </code>
